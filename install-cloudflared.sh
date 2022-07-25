@@ -59,15 +59,15 @@ echo "##########################################################################
 echo " "
 echo "Downloading Cloudflared "
 echo " "
-wget --show-progress -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64
+wget --show-progress -q https://github.com/cloudflare/cloudflared/releases/download/2022.7.1/cloudflared-linux-amd64
 echo " "
-chmod 755 cloudflared-linux-arm64
+chmod 755 cloudflared-linux-amd64
 echo "Completed download"
 echo " "
 echo "#############################################################################"
 echo " "
 echo "Installing cloudflared"
-cp cloudflared-linux-arm64 /usr/sbin/cloudflared
+cp cloudflared-linux-amd64 /usr/sbin/cloudflared
 echo " "
 echo "Setting permisions"
 chmod 755 /usr/sbin/cloudflared
