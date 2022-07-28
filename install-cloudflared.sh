@@ -259,7 +259,7 @@ echo " "
 sed -i -e '1i30 12 * * * /usr/sbin/cloudflared-update' /etc/crontabs/root
 /etc/init.d/cron restart
 echo " "
-rm cloudflared-linux-arm64*
+rm cloudflared-linux-amd64*
 echo " "
 echo " "
 echo "***************************************************"
