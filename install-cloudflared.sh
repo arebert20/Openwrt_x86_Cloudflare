@@ -212,14 +212,14 @@ echo " "
 echo " "
 echo "Checking new version"
 echo " "
-wget --show-progress -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64
+wget --show-progress -q https://github.com/cloudflare/cloudflared/releases/download/2022.7.1/cloudflared-linux-amd64
 echo " "
 echo "Completed download"
 echo " "
 echo "Checking version"
 VERSION_OLD=$(cloudflared -v)
-chmod 755 ./cloudflared-linux-arm64
-VERSION_NEW=$(./cloudflared-linux-arm64 -v)
+chmod 755 ./cloudflared-linux-amd64
+VERSION_NEW=$(./cloudflared-linux-amd64 -v)
 echo "old version: "$VERSION_OLD
 echo "new version: "$VERSION_NEW
 if [ "$VERSION_OLD" = "$VERSION_NEW" ]
@@ -227,7 +227,7 @@ then
 	echo " "
 	echo "No Change cleaning up"
 	echo " "
-	rm ./cloudflared-linux-arm64*
+	rm ./cloudflared-linux-amd64*
 else
 	echo "New version available"
 	msgf="Shutting down tunnel "
@@ -235,7 +235,7 @@ else
 	echo $msgf $PID
 	/etc/init.d/cloudflared stop
 	echo "Replacing cloudflared"
-	mv cloudflared-linux-arm64 /usr/sbin/cloudflared
+	mv cloudflared-linux-amd64 /usr/sbin/cloudflared
 	echo " "
 	echo "Replacement is complete"
 	echo " "
